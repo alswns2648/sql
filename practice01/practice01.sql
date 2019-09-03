@@ -56,6 +56,11 @@ select *
 from departments
 order by length(dept_name) desc;
 
+select *
+from departments
+order by length(dept_name) desc;
+
+
 -- 문제8.
 -- 현재 급여가 120,000이상 받는 사원은 몇 명이나 있습니까?
 select count(emp_no)
