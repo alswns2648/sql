@@ -80,21 +80,21 @@ order by salary desc;
 
 -- 문제9.
 -- 현재, 부서별 평균 연봉을 연봉이 큰 부서 순서대로 출력하세요.
-select dept_name as 부서, sum(salary) as 연봉, avg(salary) as '평균 연봉'
+select dept_name as 부서, avg(salary) as '평균 연봉'
 from dept_emp a, departments b, salaries c
   where a.emp_no = c.emp_no
 	and a.dept_no = b.dept_no
     and a.to_date = '9999-01-01'
     and c.to_date = '9999-01-01'
   group by dept_name
-order by sum(salary) desc;
+order by avg(salary) desc;
 
 -- 문제10.
 -- 현재, 직책별 평균 연봉을 연봉이 큰 직책 순서대로 출력하세요
-select a.title as 직책, sum(b.salary) as 연봉, avg(b.salary) '평균 연봉'
+select a.title as 직책, avg(b.salary) '평균 연봉'
 from titles a, salaries b
   where a.emp_no = b.emp_no
     and a.to_date = '9999.01-01'
     and b.to_date = '9999-01-01'
 group by a.title
-order by sum(b.salary) desc;
+order by avg(b.salary) desc;
